@@ -1,10 +1,16 @@
 <!DOCTYPE html>
     <head>
         <title>BeansBot</title>  
-        <script type="text/javascript" src="bot.js"></script>
     </head>
-    <body onload="initializeTalkButton()">
+    <body>
         <h1>BeansBot</h1>
-        <button id="talk-button">Talk</button>    
+        <input id="message-box" />
+        <button onclick="sendMessage()" id="talk-button">Send</button>  
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+        </script>
+        <script src="bot.js"></script>
     </body>
 </html>
