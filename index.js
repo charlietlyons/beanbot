@@ -9,9 +9,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 const client = new language.LanguageServiceClient();
 
-// For html templates
 app.use(express.static(__dirname + "/views"));
-// For assets
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
@@ -32,7 +30,7 @@ io.on("connection", (socket) => {
       .then((response) => {
         socket.emit(
           "bot-message",
-          `Sentiment: ${response[0].documentSentiment.score}`
+          `I have a sentiment score of ${response[0].documentSentiment.score}`
         );
       });
   });
