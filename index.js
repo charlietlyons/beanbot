@@ -1,11 +1,13 @@
 const express = require('express');
 const { Server } = require("socket.io");
 const http = require("http");
+const language = require("@google-cloud/language");
 
 const PORT = 3000;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+const client = new language.LanguageServiceClient();
 
 // For html templates
 app.use(express.static(__dirname + "/views"));
@@ -18,9 +20,21 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
   socket.on("client-message", (messageContent) => {
-    console.log(messageContent);
+    console.log("Message received...");
 
-    socket.emit("bot-message", "I'm a robot!");
+    client
+      .analyzeSentiment({
+        document: {
+          content: messageContent,
+          type: "PLAIN_TEXT",
+        },
+      })
+      .then((response) => {
+        socket.emit(
+          "bot-message",
+          `Sentiment: ${response[0].documentSentiment.score}`
+        );
+      });
   });
 });
 
