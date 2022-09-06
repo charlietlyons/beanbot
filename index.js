@@ -17,8 +17,10 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  socket.on("message", (messageContent) => {
+  socket.on("client-message", (messageContent) => {
     console.log(messageContent);
+
+    socket.emit("bot-message", "I'm a robot!");
   });
 });
 
