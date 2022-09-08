@@ -1,13 +1,14 @@
 const express = require('express');
 const { Server } = require("socket.io");
 const http = require("http");
-const language = require("@google-cloud/language");
+const OpenAiClient = require("./clients/OpenAiClient");
 
 const PORT = 3000;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-const client = new language.LanguageServiceClient();
+
+const openAiClient = new OpenAiClient();
 
 app.use(express.static(__dirname + "/views"));
 app.use(express.static(__dirname + "/public"));
@@ -20,19 +21,9 @@ io.on("connection", (socket) => {
   socket.on("client-message", (messageContent) => {
     console.log("Message received...");
 
-    client
-      .analyzeSentiment({
-        document: {
-          content: messageContent,
-          type: "PLAIN_TEXT",
-        },
-      })
-      .then((response) => {
-        socket.emit(
-          "bot-message",
-          `I have a sentiment score of ${response[0].documentSentiment.score}`
-        );
-      });
+    openAiClient.generateResponse(messageContent, (botResponse) => {
+      socket.emit("bot-message", botResponse);
+    });
   });
 });
 
