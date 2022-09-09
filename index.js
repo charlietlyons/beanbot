@@ -21,7 +21,7 @@ io.on("connection", (socket) => {
   socket.on("client-message", (messageContent) => {
     console.log("Message received...");
 
-    openAiClient.generateResponse(messageContent, (botResponse) => {
+    openAiClient.generateBotResponse(messageContent, (botResponse) => {
       socket.emit("bot-message", botResponse);
     });
   });

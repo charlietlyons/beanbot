@@ -5,6 +5,7 @@ socket.on("bot-message", (message) => {
 });
 
 function sendMessage() {
+  event.preventDefault();
   const messageBox = document.getElementById("message-box");
   const messageBoxContent = messageBox.value.trim();
   if (messageBoxContent.length > 0) {

@@ -4,8 +4,10 @@
     </head>
     <body>
         <h1>BeansBot</h1>
-        <input id="message-box" />
-        <button onclick="sendMessage()" id="talk-button">Send</button>
+        <form onsubmit="sendMessage()">
+            <input id="message-box" autocomplete="off" />
+            <input type="submit" id="talk-button" value="Send"/>
+        </form>
         <div id="chat-log" />
         
         <script src="/socket.io/socket.io.js"></script>
