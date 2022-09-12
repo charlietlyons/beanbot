@@ -1,14 +1,21 @@
 <!DOCTYPE html>
     <head>
-        <title>BeansBot</title>  
+        <title>BeansBot</title>
+        <link href="/styles.css" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="description" content="AI-powered chatbot that LOVES beans!">
+        <meta name="keywords" content="beans, chatbot, beanbot, beansbot, beanman, ai, openai">
+        <meta name="author" content="Charlie Lyons">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <h1>BeansBot</h1>
+        <img src="/beansbot_v2.png" />
         <form onsubmit="sendMessage()">
             <input id="message-box" autocomplete="off" />
             <input type="submit" id="talk-button" value="Send"/>
         </form>
-        <div id="chat-log" />
+        <div id="chat-log">
         
         <script src="/socket.io/socket.io.js"></script>
         <script>

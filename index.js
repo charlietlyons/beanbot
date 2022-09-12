@@ -1,7 +1,7 @@
 const express = require('express');
 const { Server } = require("socket.io");
 const http = require("http");
-const OpenAiClient = require("./clients/OpenAiClient");
+const OpenAiClient = require("./components/clients/OpenAiClient");
 
 const PORT = 3000;
 const app = express();

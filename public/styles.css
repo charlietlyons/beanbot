@@ -1,0 +1,18 @@
+:root {
+  --title-brown: rgb(57, 25, 0);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  background-color: rgb(185, 114, 0);
+}
+
+h1 {
+  color: var(--title-brown);
+}
+
+img {
+  transform: scale(0.75);
+}
