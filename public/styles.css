@@ -1,5 +1,7 @@
 :root {
   --lima-bean-green: #97e8a2;
+  --lighter-bean-green: #d8ffdd;
+  --even-lighter-bean-green: #def3e1;
   --card-white: #fcefef;
 }
 
@@ -57,6 +59,23 @@ input {
   margin: 5px;
 }
 
+input:focus {
+  background-color: beige;
+}
+
+input[type="submit"] {
+  width: 25%;
+  background-color: var(--lima-bean-green);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--lighter-bean-green);
+}
+
+input[type="submit"]:active {
+  background-color: var(--even-lighter-bean-green);
+}
+
 .card {
   display: flex;
   background-color: var(--card-white);
@@ -95,11 +114,6 @@ input {
 
 #message-box {
   width: 75%;
-}
-
-#talk-button {
-  width: 25%;
-  background-color: var(--lima-bean-green);
 }
 
 @media screen and (max-width: 786px) {
