@@ -1,7 +1,7 @@
 :root {
   --lima-bean-green: #97e8a2;
-  --lighter-bean-green: #d8ffdd;
-  --even-lighter-bean-green: #def3e1;
+  --lighter-bean-green: #bfe2c4;
+  --even-lighter-bean-green: #eef6ef;
   --card-white: #fcefef;
 }
 
@@ -57,6 +57,7 @@ input {
   border-radius: 15px;
   font-size: 20px;
   margin: 5px;
+  transition: background-color .25s ease-in;
 }
 
 input:focus {
@@ -86,9 +87,25 @@ input[type="submit"]:active {
   margin-top: 20px;
 }
 
+.message {
+  margin: 25px 10px 0 0;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 1px -1px 3px;
+  border-collapse: collapse;
+}
+
+.beansbot-message {
+    background-color: var(--lima-bean-green);
+}
+
+.you-message {
+    background-color: gray;
+}
+
 #beansbot-display {
   flex-direction: column;
-  height: 25vh;
+  height: 100%;
   align-items: center;
   width: 100%;
   max-width: 255px;

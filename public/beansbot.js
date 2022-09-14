@@ -1,27 +1,21 @@
-const chatLog = [];
-
-socket.on("bot-message", (message) => {
-  addToChatLog("BeansBot", message);
-});
-
 function sendMessage() {
-  event.preventDefault();
-  const messageBox = document.getElementById("message-box");
-  const messageBoxContent = messageBox.value.trim();
-  if (messageBoxContent.length > 0) {
-    socket.emit("client-message", messageBoxContent);
-    messageBox.value = "";
-    addToChatLog("You", messageBoxContent);
-  }
+	event.preventDefault();
+	const messageBox = document.getElementById("message-box");
+	const messageBoxContent = messageBox.value.trim();
+	if (messageBoxContent.length > 0) {
+		socket.emit("client-message", messageBoxContent);
+		messageBox.value = "";
+		addToChatLog("You", messageBoxContent);
+	}
 }
 
 function addToChatLog(speaker, message) {
-  chatLog.push(`${speaker}: ${message}\n`);
-
-  let formattedChatLog = "";
-  chatLog.forEach((message) => {
-    formattedChatLog = formattedChatLog.concat(message);
-  });
-
-  document.getElementById("chat-log").innerText = formattedChatLog;
+	const messageNode = document.createElement("p");
+	messageNode.className = `${speaker === "BeansBot" ? "beansbot-message" : "you-message"} message`;
+	messageNode.innerHTML = `${speaker}: ${message}`;
+	document.getElementById("chat-log").append(messageNode);
 }
+
+socket.on("bot-message", (message) => {
+	addToChatLog("BeansBot", message);
+});
