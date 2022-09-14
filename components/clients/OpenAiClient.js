@@ -17,7 +17,7 @@ class OpenAiClient {
       .createCompletion({
         model: "text-davinci-002",
         prompt,
-        temperature: temperature,
+        temperature,
         max_tokens: 256
       })
       .then((responseText) => successHandler(responseText));

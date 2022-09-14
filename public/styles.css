@@ -1,20 +1,38 @@
 :root {
-  --title-brown: rgb(57, 25, 0);
+  --lima-bean-green: #97e8a2;
+  --card-white: #fcefef;
+}
+
+@font-face {
+  font-family: "Kool Beans";
+  src: url("./fonts/koolbeans/KoolBeans-eerm.ttf");
+}
+
+* {
+  font-family: Trebuchet MS, sans-serif;
 }
 
 body {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  margin: auto;
-  margin-top: 5%;
-  background-color: rgb(185, 114, 0);
-  width: max(758px, 76%);
+  background-color: var(--lima-bean-green);
+  width: max(768px, 76%);
   max-width: 1080px;
+  margin: auto;
 }
 
 h1 {
-  color: var(--title-brown);
+  font-family: Kool Beans, sans-serif;
+  font-size: 65px;
+  color: var(--lima-bean-green);
+  -webkit-text-stroke: 1px black;
+  margin: 0;
+  padding-bottom: 25px;
+}
+
+hr {
+  width: 95%;
 }
 
 img {
@@ -33,28 +51,37 @@ form {
   height: 50px;
 }
 
+input {
+  border-radius: 15px;
+  font-size: 20px;
+  margin: 5px;
+}
+
 .card {
   display: flex;
-  background-color: aliceblue;
+  background-color: var(--card-white);
   border-radius: 15px;
   box-shadow: 5px 5px 5px;
   width: 100%;
   height: 90vh;
+  margin-top: 20px;
 }
 
 #beansbot-display {
   flex-direction: column;
   height: 25vh;
   align-items: center;
-  width: 25%;
+  width: 100%;
   max-width: 255px;
   max-height: 250px;
+  padding: 25px;
 }
 
 #chat {
   display: flex;
   flex-direction: column;
   margin-left: 45px;
+  overflow: hidden;
 }
 
 #chat-log {
@@ -72,6 +99,7 @@ form {
 
 #talk-button {
   width: 25%;
+  background-color: var(--lima-bean-green);
 }
 
 @media screen and (max-width: 786px) {
@@ -80,19 +108,12 @@ form {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 10px 10px;
-  }
-
-  h1 {
-    color: var(--title-brown);
+    margin: 0;
   }
 
   img {
     width: 100px;
     height: 100px;
-  }
-
-  form {
   }
 
   .card {
@@ -103,22 +124,15 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100%;
+    max-width: 100%;
+    width: 80%;
     height: 120px;
   }
 
   #chat {
     margin: 10px 10px 0 0;
-    height: 85vh;
-    transition: display;
-  }
-
-  #chat-log {
-  }
-
-  #message-box {
-  }
-
-  #talk-button {
+    max-width: 100%;
+    width: 80vw;
+    height: 80vh;
   }
 }
