@@ -4,7 +4,6 @@ const ChatSummarizer = require("./ChatSummarizer")
 class Chat {
     constructor() {
         this.openAiClient = new OpenAiClient();
-        // TODO: coupling bad
         this.chatSummarizer = new ChatSummarizer(this.openAiClient);
         this.history = ``;
         this.summary = ``;
