@@ -4,9 +4,13 @@
 
 body {
   display: flex;
-  align-items: center;
-  flex-flow: column;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 5%;
   background-color: rgb(185, 114, 0);
+  width: max(758px, 76%);
+  max-width: 1080px;
 }
 
 h1 {
@@ -14,5 +18,107 @@ h1 {
 }
 
 img {
-  transform: scale(0.75);
+  height: auto;
+  width: auto;
+  max-width: 155px;
+  max-height: 150px;
+  box-shadow: 0 0 10px;
+  border-radius: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  margin: 25px 25px;
+  height: 50px;
+}
+
+.card {
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px;
+  width: 100%;
+  height: 90vh;
+}
+
+#beansbot-display {
+  flex-direction: column;
+  height: 25vh;
+  align-items: center;
+  width: 25%;
+  max-width: 255px;
+  max-height: 250px;
+}
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+}
+
+#chat-log {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 25px 25px;
+  overflow: auto;
+  word-wrap: break-word;
+  font-size: large;
+}
+
+#message-box {
+  width: 75%;
+}
+
+#talk-button {
+  width: 25%;
+}
+
+@media screen and (max-width: 786px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 10px;
+  }
+
+  h1 {
+    color: var(--title-brown);
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  form {
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  #beansbot-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 120px;
+  }
+
+  #chat {
+    margin: 10px 10px 0 0;
+    height: 85vh;
+    transition: display;
+  }
+
+  #chat-log {
+  }
+
+  #message-box {
+  }
+
+  #talk-button {
+  }
 }

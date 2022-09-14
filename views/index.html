@@ -9,13 +9,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>BeansBot</h1>
-        <img src="/beansbot_v2.png" />
-        <form onsubmit="sendMessage()">
-            <input id="message-box" autocomplete="off" />
-            <input type="submit" id="talk-button" value="Send"/>
-        </form>
-        <div id="chat-log">
+        <section class="card" id="beansbot-display">
+            <h1>BeansBot</h1>
+            <img src="/beansbot_v2.png" />
+        </section>
+       
+        <section class="card" id="chat">
+            <form onsubmit="sendMessage()">
+                <input id="message-box" autocomplete="off" />
+                <input type="submit" id="talk-button" value="Send"/>
+            </form>
+            <div id="chat-log">
+        </section>
         
         <script src="/socket.io/socket.io.js"></script>
         <script>

@@ -8,8 +8,6 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const chat = new Chat();
-
 app.use(express.static(__dirname + "/views"));
 app.use(express.static(__dirname + "/public"));
 
@@ -18,6 +16,9 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
+  console.log("New Chat initiated...")
+  const chat = new Chat();
+
   socket.on("client-message", (messageContent) => {
     console.log("Message received...");
 
