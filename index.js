@@ -1,14 +1,14 @@
 const express = require('express');
 const { Server } = require("socket.io");
 const http = require("http");
-const OpenAiClient = require("./components/clients/OpenAiClient");
+const Chat = require('./components/Chat')
 
 const PORT = 3000;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const openAiClient = new OpenAiClient();
+const chat = new Chat();
 
 app.use(express.static(__dirname + "/views"));
 app.use(express.static(__dirname + "/public"));
@@ -21,7 +21,7 @@ io.on("connection", (socket) => {
   socket.on("client-message", (messageContent) => {
     console.log("Message received...");
 
-    openAiClient.generateBotResponse(messageContent, (botResponse) => {
+    chat.generateBotResponse(messageContent, (botResponse) => {
       socket.emit("bot-message", botResponse);
     });
   });
