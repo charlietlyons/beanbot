@@ -4,7 +4,7 @@
 	--even-lighter-bean-green: #eef6ef;
 	--card-white: #d1c8c8;
 	--garbonzo-gray: #f5eeec;
-  --black-bean-green: #033d30;
+	--black-bean-green: #033d30;
 }
 
 @font-face {
@@ -37,31 +37,31 @@ hr {
 }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  background-color: var(--card-white);
-  border-radius: 0 0 15px 15px;
-  box-shadow: 1px 1px 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  min-height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px 0;
+	background-color: var(--card-white);
+	border-radius: 0 0 15px 15px;
+	box-shadow: 1px 1px 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	min-height: 100px;
 }
 
 section {
-  display: flex;
+	display: flex;
 }
 
 a {
-  font-family: 'Kool Beans', sans-serif;
-  text-decoration: none;
-  color: var(--lima-bean-green);
-  font-size: 55px;
-  height: 100%;
-  transition: font-size .5s ease-in;
-  -webkit-text-stroke: 1px black;
+	font-family: "Kool Beans", sans-serif;
+	text-decoration: none;
+	color: var(--lima-bean-green);
+	font-size: 55px;
+	height: 100%;
+	transition: font-size 0.5s ease-in;
+	-webkit-text-stroke: 1px black;
 }
 
 a:hover {
@@ -69,8 +69,8 @@ a:hover {
 }
 
 b {
-  font-size: larger;
-  margin-right: 15px;
+	font-size: larger;
+	margin-right: 15px;
 }
 
 img {
@@ -96,12 +96,12 @@ input {
 	font-size: 20px;
 	margin: 5px;
 	transition: background-color 0.25s ease-in;
- 	border: 0;
+	border: 0;
 }
 
 input:focus {
 	background-color: beige;
-  	outline: 0;
+	outline: 0;
 }
 
 input[type="submit"] {
@@ -124,7 +124,7 @@ input[type="submit"]:active {
 	box-shadow: 1px 1px 5px;
 	width: 100%;
 	margin-top: 10px;
-	max-height: calc(100vh - 250px);
+	max-height: calc(100vh - 150px);
 }
 
 .message {
@@ -156,7 +156,7 @@ input[type="submit"]:active {
 	margin: 25px 25px;
 	overflow: auto;
 	word-wrap: break-word;
-	font-size: large;	
+	font-size: large;
 	max-width: 100%;
 }
 
@@ -189,7 +189,6 @@ input[type="submit"]:active {
 		max-width: 100%;
 		width: 95%;
 		height: 100%;
-		max-height: 550px;
 		margin: 0;
 	}
 }
