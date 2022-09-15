@@ -9,20 +9,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <section class="card" id="beansbot-display">
-            <h1>BeansBot</h1>
-            <img src="/beansbot_v2.png" />
+        <nav>
+            <a href="/">BeansBot</a>
+            <a href="/about">About</a>
+        </nav>
+        <section>
+            <div class="card" id="chat">
+                <form onsubmit="sendMessage()">
+                    <input id="message-box" autocomplete="off" />
+                    <input type="submit" id="talk-button" value="Send"/>
+                </form>
+                <hr />
+                <p id="chat-log"></p>
+            </div>
         </section>
-       
-        <section class="card" id="chat">
-            <form onsubmit="sendMessage()">
-                <input id="message-box" autocomplete="off" />
-                <input type="submit" id="talk-button" value="Send"/>
-            </form>
-            <hr />
-            <p id="chat-log"></p>
-        </section>
-        
         <script src="/socket.io/socket.io.js"></script>
         <script>
             const socket = io();

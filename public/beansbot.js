@@ -12,8 +12,13 @@ function sendMessage() {
 function addToChatLog(speaker, message) {
 	const chatLogElement = document.getElementById("chat-log");
 	const messageNode = document.createElement("p");
-	messageNode.className = `${speaker === "BeansBot" ? "beansbot-message" : "you-message"} message`;
-	messageNode.innerHTML = `${speaker}: ${message}`;
+  const isBeansBot = speaker === "BeansBot";
+  messageNode.className = `${
+		isBeansBot ? "beansbot-message" : "you-message"
+  } message`;
+  messageNode.innerHTML = `
+  ${isBeansBot ? `<img src="/beansbot_v2.png" />` : `<b>${speaker}: </b>`}
+  ${message}`;
 	chatLogElement.prepend(messageNode);
 }
 

@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
   res.sendFile("index.html");
 });
 
+app.get("/about", (req, res) => {
+	res.sendFile(`${__dirname}/views/about.html`);
+});
+
 io.on("connection", (socket) => {
   console.log("New Chat initiated...")
   const chat = new Chat();

@@ -22,7 +22,7 @@ class Chat {
 			this.addToChatHistory("You", message);
 		}
 
-		this.openAiClient.generateText(prompt, 0.05, (response) => {
+		this.openAiClient.generateText(prompt, 0, (response) => {
 			const aiResponseText = response.data.choices[0].text.trim();
 			const responseEndPunctuation = aiResponseText.match(/[.!?]/);
 
