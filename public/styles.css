@@ -1,169 +1,170 @@
 :root {
-  --lima-bean-green: #97e8a2;
-  --lighter-bean-green: #bfe2c4;
-  --even-lighter-bean-green: #eef6ef;
-  --card-white: #fcefef;
+	--lima-bean-green: #97e8a2;
+	--lighter-bean-green: #bfe2c4;
+	--even-lighter-bean-green: #eef6ef;
+	--card-white: #fcefef;
+	--garbonzo-gray: #dbd1cf;
 }
 
 @font-face {
-  font-family: "Kool Beans";
-  src: url("./fonts/koolbeans/KoolBeans-eerm.ttf");
+	font-family: "Kool Beans";
+	src: url("./fonts/koolbeans/KoolBeans-eerm.ttf");
 }
 
 * {
-  font-family: Trebuchet MS, sans-serif;
+	font-family: Trebuchet MS, sans-serif;
 }
 
 body {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  background-color: var(--lima-bean-green);
-  width: max(768px, 76%);
-  max-width: 1080px;
-  margin: auto;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: row;
+	background-color: var(--lima-bean-green);
+	width: max(768px, 76%);
+	max-width: 1080px;
+	margin: auto;
 }
 
 h1 {
-  font-family: Kool Beans, sans-serif;
-  font-size: 65px;
-  color: var(--lima-bean-green);
-  -webkit-text-stroke: 1px black;
-  margin: 0;
-  padding-bottom: 25px;
+	font-family: Kool Beans, sans-serif;
+	font-size: 65px;
+	color: var(--lima-bean-green);
+	-webkit-text-stroke: 1px black;
+	margin: 0;
+	padding-bottom: 25px;
 }
 
 hr {
-  width: 95%;
+	width: 95%;
 }
 
 img {
-  height: auto;
-  width: auto;
-  max-width: 155px;
-  max-height: 150px;
-  box-shadow: 0 0 10px;
-  border-radius: 15px;
+	height: auto;
+	width: auto;
+	max-width: 155px;
+	max-height: 150px;
+	box-shadow: 0 0 10px;
+	border-radius: 15px;
 }
 
 form {
-  display: flex;
-  flex-direction: row;
-  margin: 25px 25px;
-  height: 50px;
+	display: flex;
+	flex-direction: row;
+	margin: 25px 25px;
+	height: 50px;
 }
 
 input {
-  border-radius: 15px;
-  font-size: 20px;
-  margin: 5px;
-  transition: background-color .25s ease-in;
+	border-radius: 15px;
+	font-size: 20px;
+	margin: 5px;
+	transition: background-color 0.25s ease-in;
 }
 
 input:focus {
-  background-color: beige;
+	background-color: beige;
 }
 
 input[type="submit"] {
-  width: 25%;
-  background-color: var(--lima-bean-green);
+	width: 25%;
+	background-color: var(--lima-bean-green);
 }
 
 input[type="submit"]:hover {
-  background-color: var(--lighter-bean-green);
+	background-color: var(--lighter-bean-green);
 }
 
 input[type="submit"]:active {
-  background-color: var(--even-lighter-bean-green);
+	background-color: var(--even-lighter-bean-green);
 }
 
 .card {
-  display: flex;
-  background-color: var(--card-white);
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px;
-  width: 100%;
-  height: 90vh;
-  margin-top: 20px;
+	display: flex;
+	background-color: var(--card-white);
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px;
+	width: 100%;
+	height: 90vh;
+	margin-top: 20px;
 }
 
 .message {
-  margin: 25px 10px 0 0;
-  padding: 25px;
-  border-radius: 25px;
-  box-shadow: 1px -1px 3px;
-  border-collapse: collapse;
+	margin: 25px 10px 0 0;
+	padding: 25px;
+	border-radius: 25px;
+	box-shadow: 1px -1px 3px;
+	border-collapse: collapse;
 }
 
 .beansbot-message {
-    background-color: var(--lima-bean-green);
+	background-color: var(--lima-bean-green);
 }
 
 .you-message {
-    background-color: gray;
+	background-color: var(--garbonzo-gray);
 }
 
 #beansbot-display {
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
-  width: 100%;
-  max-width: 255px;
-  max-height: 250px;
-  padding: 25px;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+	width: 100%;
+	max-width: 255px;
+	max-height: 250px;
+	padding: 25px;
 }
 
 #chat {
-  display: flex;
-  flex-direction: column;
-  margin-left: 45px;
-  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	margin-left: 45px;
+	overflow: hidden;
 }
 
 #chat-log {
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 25px 25px;
-  overflow: auto;
-  word-wrap: break-word;
-  font-size: large;
+	display: flex;
+	flex-direction: column-reverse;
+	margin: 25px 25px;
+	overflow: auto;
+	word-wrap: break-word;
+	font-size: large;
 }
 
 #message-box {
-  width: 75%;
+	width: 75%;
 }
 
 @media screen and (max-width: 786px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-  }
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin: 0;
+	}
 
-  img {
-    width: 100px;
-    height: 100px;
-  }
+	img {
+		width: 100px;
+		height: 100px;
+	}
 
-  .card {
-    width: 100%;
-  }
+	.card {
+		width: 100%;
+	}
 
-  #beansbot-display {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    max-width: 100%;
-    width: 80%;
-    height: 120px;
-  }
+	#beansbot-display {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		max-width: 100%;
+		width: 80%;
+		height: 120px;
+	}
 
-  #chat {
-    margin: 10px 10px 0 0;
-    max-width: 100%;
-    width: 80vw;
-    height: 80vh;
-  }
+	#chat {
+		margin: 10px 10px 0 0;
+		max-width: 100%;
+		width: 80vw;
+		height: 80vh;
+	}
 }

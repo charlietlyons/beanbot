@@ -10,10 +10,11 @@ function sendMessage() {
 }
 
 function addToChatLog(speaker, message) {
+	const chatLogElement = document.getElementById("chat-log");
 	const messageNode = document.createElement("p");
 	messageNode.className = `${speaker === "BeansBot" ? "beansbot-message" : "you-message"} message`;
 	messageNode.innerHTML = `${speaker}: ${message}`;
-	document.getElementById("chat-log").append(messageNode);
+	chatLogElement.prepend(messageNode);
 }
 
 socket.on("bot-message", (message) => {

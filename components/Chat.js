@@ -6,7 +6,7 @@ class Chat {
 		this.openAiClient = new OpenAiClient();
 		this.chatSummarizer = new ChatSummarizer(this.openAiClient);
 		this.history = [];
-		this.summary = ``;
+		this.summary = '';
 	}
 
 	addToChatHistory(speaker, message) {
@@ -16,7 +16,7 @@ class Chat {
 	generateBotResponse(message, successHandler, doContinue = false) {
 		const prompt = doContinue
 			? message
-			: `${this.summary}\nYou: ${message}\nBeansBot, who is obsessed with beans: `;
+			: `BeansBot is a robot who is obsessed with beans. ${this.summary}\nYou: ${message}\nBeansBot: `;
 
 		if (!doContinue) {
 			this.addToChatHistory("You", message);
