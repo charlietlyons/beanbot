@@ -2,8 +2,8 @@
 	--lima-bean-green: #97e8a2;
 	--lighter-bean-green: #bfe2c4;
 	--even-lighter-bean-green: #eef6ef;
-	--card-white: #fcefef;
-	--garbonzo-gray: #dbd1cf;
+	--card-white: #d1c8c8;
+	--garbonzo-gray: #f5eeec;
 }
 
 @font-face {
@@ -59,10 +59,12 @@ input {
 	font-size: 20px;
 	margin: 5px;
 	transition: background-color 0.25s ease-in;
+  border: 0;
 }
 
 input:focus {
 	background-color: beige;
+  outline: 0;
 }
 
 input[type="submit"] {
